@@ -334,7 +334,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setBackgroundId(0x00000000) //设置外部遮罩颜色
                 .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
                     @Override
-                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
+                    public void onOptionsSelectChanged(int options1, int options2, int options3,int triggerWv) {
                         String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
                         Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
                     }
@@ -417,8 +417,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         })
                 .setOptionsSelectChangeListener(new OnOptionsSelectChangeListener() {
                     @Override
-                    public void onOptionsSelectChanged(int options1, int options2, int options3) {
-                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3;
+                    public void onOptionsSelectChanged(int options1, int options2, int options3,int triggerWv) {
+                        String str = "options1: " + options1 + "\noptions2: " + options2 + "\noptions3: " + options3+",triggerWv=="+triggerWv;
                         Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT).show();
                     }
                 })

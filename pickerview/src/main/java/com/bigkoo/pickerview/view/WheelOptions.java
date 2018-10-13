@@ -99,7 +99,7 @@ public class WheelOptions<T> {
                 int opt2Select = 0;
                 if (mOptions2Items == null) {//只有1级联动数据
                     if (optionsSelectChangeListener != null) {
-                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), 0, 0);
+                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), 0, 0,1);
                     }
                 } else {
                     if (!isRestoreItem) {
@@ -114,7 +114,7 @@ public class WheelOptions<T> {
                         wheelListener_option2.onItemSelected(opt2Select);
                     } else {//只有2级联动数据，滑动第1项回调
                         if (optionsSelectChangeListener != null) {
-                            optionsSelectChangeListener.onOptionsSelectChanged(index, opt2Select, 0);
+                            optionsSelectChangeListener.onOptionsSelectChanged(index, opt2Select, 0,2);
                         }
                     }
                 }
@@ -141,11 +141,11 @@ public class WheelOptions<T> {
 
                     //3级联动数据实时回调
                     if (optionsSelectChangeListener != null) {
-                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, opt3);
+                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, opt3,2);
                     }
                 } else {//只有2级联动数据，滑动第2项回调
                     if (optionsSelectChangeListener != null) {
-                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, 0);
+                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, 0,2);
                     }
                 }
             }
@@ -162,7 +162,7 @@ public class WheelOptions<T> {
             wv_option3.setOnItemSelectedListener(new OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(int index) {
-                    optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), wv_option2.getCurrentItem(), index);
+                    optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), wv_option2.getCurrentItem(), index,3);
                 }
             });
         }
@@ -193,7 +193,7 @@ public class WheelOptions<T> {
             wv_option1.setOnItemSelectedListener(new OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(int index) {
-                    optionsSelectChangeListener.onOptionsSelectChanged(index, wv_option2.getCurrentItem(), wv_option3.getCurrentItem());
+                    optionsSelectChangeListener.onOptionsSelectChanged(index, wv_option2.getCurrentItem(), wv_option3.getCurrentItem(),1);
                 }
             });
         }
@@ -206,7 +206,7 @@ public class WheelOptions<T> {
                 wv_option2.setOnItemSelectedListener(new OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(int index) {
-                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, wv_option3.getCurrentItem());
+                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), index, wv_option3.getCurrentItem(),2);
                     }
                 });
             }
@@ -219,7 +219,7 @@ public class WheelOptions<T> {
                 wv_option3.setOnItemSelectedListener(new OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(int index) {
-                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), wv_option2.getCurrentItem(), index);
+                        optionsSelectChangeListener.onOptionsSelectChanged(wv_option1.getCurrentItem(), wv_option2.getCurrentItem(), index,3);
                     }
                 });
             }
