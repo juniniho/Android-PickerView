@@ -65,8 +65,6 @@ public class BasePickerView {
             //这个是真正要加载选择器的父布局
             contentContainer = (ViewGroup) dialogView.findViewById(R.id.content_container);
             //设置对话框 默认左右间距屏幕30
-            params.leftMargin = 30;
-            params.rightMargin = 30;
             contentContainer.setLayoutParams(params);
             //创建对话框
             createDialog();
@@ -319,7 +317,7 @@ public class BasePickerView {
             Window dialogWindow = mDialog.getWindow();
             if (dialogWindow != null) {
                 dialogWindow.setWindowAnimations(R.style.picker_view_scale_anim);
-                dialogWindow.setGravity(Gravity.CENTER);//可以改成Bottom
+                dialogWindow.setGravity(Gravity.BOTTOM);//可以改成Bottom
             }
 
             mDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
